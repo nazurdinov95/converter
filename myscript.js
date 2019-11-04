@@ -20,12 +20,12 @@ function addButton() {
 
     const kb = document.getElementById('kb');
     const mb = document.getElementById('mb');
-    const kb1 = document.getElementById('kb1');
-    const mb1 = document.getElementById('mb1');
+    const kb2 = document.getElementById('kb2');
+    const mb2 = document.getElementById('mb2');
 
-    if (kb.checked) {
-        const resault = inputValue*1024;
-        document.getElementById('message').innerHTML =resault;
+    if (kb == mb2) {
+        const resault = inputValue / 1024;
+        document.getElementById('message').innerHTML = resault;
     }
 
 }
