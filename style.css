@@ -5,3 +5,11 @@
 select {
     margin: 10px 0;
 }
+
+#select2{
+    margin-left: 170px;
+}
+
+#message{
+    text-align: center;
+}

@@ -21,10 +21,35 @@ function addButton() {
     const select = document.getElementById('select1').value;
     const select2 = document.getElementById('select2').value;
 
-    switch (select){
+    switch (select) {
         case "kb":
-            text =inputValue*1024;
+            text = inputValue * 1024;
+            break;
+        case "mb":
+            text = inputValue * 1024 * 1024;
+            break;
+        case "gb":
+            text = inputValue * 1024 * 1024 * 1024;
+            break;
+        case "tb":
+            text = inputValue * 1024 * 1024 * 1024 * 1024;
             break;
     }
-    document.getElementById('message').innerHTML = text;
+
+    let text2;
+    switch (select2) {
+        case "kb2":
+            text2 = text / 1024;
+            break;
+        case "mb2":
+            text2 = text / (1024 * 1024);
+            break;
+        case "gb2":
+            text2 = text / (1024 * 1024 * 1024);
+            break;
+        case "tb2":
+            text2 = text / (1024 * 1024 * 1024 * 1024);
+            break;
+    }
+    document.getElementById('message').innerText = text2;
 }
