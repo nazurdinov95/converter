@@ -17,13 +17,14 @@ input.addEventListener('keydown', (e) => {
 
 function addButton() {
     const inputValue = document.getElementById('input').value;
-
+    let text;
     const select = document.getElementById('select1').value;
     const select2 = document.getElementById('select2').value;
 
-    if () {
-        const resault = inputValue / 1024;
-        document.getElementById('message').innerHTML = resault;
+    switch (select){
+        case "kb":
+            text =inputValue*1024;
+            break;
     }
-
+    document.getElementById('message').innerHTML = text;
 }
