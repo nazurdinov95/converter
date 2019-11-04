@@ -18,10 +18,8 @@ input.addEventListener('keydown', (e) => {
 function addButton() {
     const inputValue = document.getElementById('input').value;
 
-    const kb = document.getElementById('kb');
-    const mb = document.getElementById('mb');
-    const kb2 = document.getElementById('kb2');
-    const mb2 = document.getElementById('mb2');
+    const select = document.getElementById(‘select1’).value;
+    const select2 = document.getElementById(‘select2’).value;
 
     if (kb == mb2) {
         const resault = inputValue / 1024;
