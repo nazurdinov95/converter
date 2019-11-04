@@ -23,7 +23,7 @@ function addButton() {
     const kb1 = document.getElementById('kb1');
     const mb1 = document.getElementById('mb1');
 
-    if (kb[0].checked) {
+    if (kb.checked) {
         const resault = inputValue*1024;
         document.getElementById('message').innerHTML =resault;
     }
