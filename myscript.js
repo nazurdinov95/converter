@@ -16,7 +16,7 @@ input.addEventListener('keydown', (e) => {
 
 
 function addButton() {
-    const inputValue = document.getElementById('input');
+    const inputValue = document.getElementById('input').value;
 
     const kb = document.getElementById('kb');
     const mb = document.getElementById('mb');
