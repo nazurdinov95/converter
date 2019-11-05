@@ -14,42 +14,50 @@ input.addEventListener('keydown', (e) => {
 }
 })
 
+const select = document.getElementById('select1');
+const select2 = document.getElementById('select2');
 
 function addButton() {
     const inputValue = document.getElementById('input').value;
-    let text;
-    const select = document.getElementById('select1').value;
-    const select2 = document.getElementById('select2').value;
+    const from = select.value;
+    const fromTo = select2.value;
 
-    switch (select) {
+    let result;
+
+    const KYLO_BYTE = 1024;
+    const MEGA_BYTE = KYLO_BYTE * 1024;
+    const GEGA_BYTE = MEGA_BYTE * 1024;
+    const TERA_BYTE = GEGA_BYTE * 1024;
+
+    switch (from) {
         case "kb":
-            text = inputValue * 1024;
+            result = inputValue * KYLO_BYTE;
             break;
         case "mb":
-            text = inputValue * 1024 * 1024;
+            result = inputValue * MEGA_BYTE;
             break;
         case "gb":
-            text = inputValue * 1024 * 1024 * 1024;
+            result = inputValue * GEGA_BYTE;
             break;
         case "tb":
-            text = inputValue * 1024 * 1024 * 1024 * 1024;
+            result = inputValue * TERA_BYTE;
             break;
     }
 
-    let text2;
-    switch (select2) {
+    let result2;
+    switch (fromTo) {
         case "kb2":
-            text2 = text / 1024;
+           result2 = result / KYLO_BYTE;
             break;
         case "mb2":
-            text2 = text / (1024 * 1024);
+            result2 = result / MEGA_BYTE;
             break;
         case "gb2":
-            text2 = text / (1024 * 1024 * 1024);
+            result2 = result / GEGA_BYTE;
             break;
         case "tb2":
-            text2 = text / (1024 * 1024 * 1024 * 1024);
+            result2 = result / TERA_BYTE;
             break;
     }
-    document.getElementById('message').innerText = text2;
+    document.getElementById('message').value = result2;
 }

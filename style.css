@@ -3,13 +3,25 @@
     padding: 10px;
 }
 select {
-    margin: 10px 0;
+    width: 17%;
+    font-size:25px;
+    background-color: antiquewhite;
 }
 
 #select2{
-    margin-left: 170px;
+    margin-left: 74px;
 }
 
 #message{
     text-align: center;
+}
+
+input{
+    height: 30px;
+    font-size: 18px;
+}
+#addButton{
+    height: 35px;
+    background-color: aliceblue;
+    font-size: 15px;
 }
