@@ -17,17 +17,17 @@ input.addEventListener('keydown', (e) => {
 const select = document.getElementById('select1');
 const select2 = document.getElementById('select2');
 
+const KYLO_BYTE = 1024;
+const MEGA_BYTE = KYLO_BYTE * 1024;
+const GEGA_BYTE = MEGA_BYTE * 1024;
+const TERA_BYTE = GEGA_BYTE * 1024;
+
 function addButton() {
     const inputValue = document.getElementById('input').value;
     const from = select.value;
     const fromTo = select2.value;
 
     let result;
-
-    const KYLO_BYTE = 1024;
-    const MEGA_BYTE = KYLO_BYTE * 1024;
-    const GEGA_BYTE = MEGA_BYTE * 1024;
-    const TERA_BYTE = GEGA_BYTE * 1024;
 
     switch (from) {
         case "kb":

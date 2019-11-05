@@ -6,6 +6,8 @@ select {
     width: 17%;
     font-size:25px;
     background-color: antiquewhite;
+    border-radius: 5px;
+    margin: 5px 0;
 }
 
 #select2{
