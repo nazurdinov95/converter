@@ -46,16 +46,16 @@ function addButton() {
 
     let result2;
     switch (fromTo) {
-        case "kb2":
+        case "kb":
            result2 = result / KYLO_BYTE;
             break;
-        case "mb2":
+        case "mb":
             result2 = result / MEGA_BYTE;
             break;
-        case "gb2":
+        case "gb":
             result2 = result / GEGA_BYTE;
             break;
-        case "tb2":
+        case "tb":
             result2 = result / TERA_BYTE;
             break;
     }
