@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet" type="text/css">
     <title>Converter</title>
+
 </head>
 <body>
 
 <div id="container">
+    <select name="SelectMyLove" id="SelectMyLove" onChange="Add_option_to_select();">
+        <option value="1">Масса</option>
+    </select>
+    <br>
     <input id="input" type="number" placeholder="напишите число">
     <button id="addButton">Convert</button>
     <input type="text" id="message">
     <br>
+
+    <SELECT name="resort[]" id="resort">
+
+    </SELECT>
+
+    <!--
     <select id="select1">
         <option value="kb">Килобайт</option>
         <option value="mb">Мегабайт</option>
@@ -26,7 +38,7 @@
         <option value="tb">Терабайт</option>
     </select>
 </div>
-
+-->
 <script src="myscript.js" type="text/javascript"></script>
 </body>
 </html>

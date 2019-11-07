@@ -1,3 +1,4 @@
+/*
 const button = document.getElementById('addButton');
 
 button.addEventListener('click', () => {
@@ -13,7 +14,36 @@ input.addEventListener('keydown', (e) => {
     addButton();
 }
 })
+*/
+const massa = new Array("Тонна", "Килограмм", "Грамм", "Милиграм");
+var leng;
 
+function Add_option_to_select() {
+    var CountryObj = document.getElementById("SelectMyLove");
+    var ResortObj = document.getElementById("resort");
+    var selind = CountryObj.options.selectedIndex;
+
+    switch (selind) {
+        case 0:
+            ResortObj.options.length = 0;
+            break;
+        case 1:
+            ResortObj.options.length = 0;
+
+            leng = massa.length;
+            // alert(len);
+            for (var n = 0; n < leng; n++) {
+                ResortObj[n] = new Option(massa[n], n);
+            }
+
+
+    }
+
+
+}
+
+
+/*
 const select = document.getElementById('select1');
 const select2 = document.getElementById('select2');
 
@@ -45,6 +75,7 @@ function addButton() {
     }
 
     let result2;
+
     switch (fromTo) {
         case "kb":
            result2 = result / KYLO_BYTE;
@@ -60,4 +91,4 @@ function addButton() {
             break;
     }
     document.getElementById('message').value = result2;
-}
+}*/
