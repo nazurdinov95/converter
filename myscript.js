@@ -16,18 +16,22 @@ input.addEventListener('keydown', (e) => {
 })
 */
 const massa = new Array("Тонна", "Килограмм", "Грамм", "Милиграм");
+const Info = new Array("Киллобайт", "Мегабайт", "Гегабайт", "Терабайт");
+const dlina = new Array("Тонна", "Килограмм", "Грамм", "Милиграм");
+
 var leng;
 
 function Add_option_to_select() {
     var CountryObj = document.getElementById("SelectMyLove");
     var ResortObj = document.getElementById("resort");
+    var ResortObj2 = document.getElementById("resort2");
     var selind = CountryObj.options.selectedIndex;
 
     switch (selind) {
-        case 0:
+        case "0":
             ResortObj.options.length = 0;
             break;
-        case 1:
+        case "1":
             ResortObj.options.length = 0;
 
             leng = massa.length;
@@ -35,11 +39,41 @@ function Add_option_to_select() {
             for (var n = 0; n < leng; n++) {
                 ResortObj[n] = new Option(massa[n], n);
             }
+        case "2":
+            ResortObj.options.length = 0;
+
+            leng = Info.length;
+
+            for (var n = 0; n < leng; n++) {
+                ResortObj[n] = new Option(Info[n], n);
+            }
 
 
     }
+    switch (selind) {
+        case 0:
+            ResortObj2.options.length = 0;
+            break;
+        case 1:
+            ResortObj2.options.length = 0;
+
+            leng = massa.length;
+            // alert(len);
+            for (var n = 0; n < leng; n++) {
+                ResortObj2[n] = new Option(massa[n], n);
+            }
+            break;
+        case 2:
+            ResortObj2.options.length = 0;
+
+            leng = Info.length;
+
+            for (var n = 0; n < leng; n++) {
+                ResortObj2[n] = new Option(Info[n], n);
+            }
 
 
+    }
 }
 
 

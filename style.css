@@ -3,12 +3,28 @@
     padding: 10px;
 }
 
+#resort {
+    width: 17%;
+    font-size: 25px;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    margin: 2px 0;
+}
+
+#resort2 {
+    width: 17%;
+    font-size: 25px;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    margin: 2px 2px 0 77px;
+}
+
 #select1 {
     width: 17%;
     font-size:25px;
     background-color: antiquewhite;
     border-radius: 5px;
-    margin: 2px 0;
+    margin: 2px 2px 75px 0;
 }
 
 #select2 {

@@ -11,7 +11,11 @@
 
 <div id="container">
     <select name="SelectMyLove" id="SelectMyLove" onChange="Add_option_to_select();">
+        <option>Выберите единицу</option>
         <option value="1">Масса</option>
+        <option value="2">Объем информации</option>
+        <option value="3">Длина</option>
+
     </select>
     <br>
     <input id="input" type="number" placeholder="напишите число">
@@ -19,9 +23,8 @@
     <input type="text" id="message">
     <br>
 
-    <SELECT name="resort[]" id="resort">
-
-    </SELECT>
+    <SELECT name="resort[]" id="resort"></SELECT>
+    <SELECT name="resort[]" id="resort2"></SELECT>
 
     <!--
     <select id="select1">
