@@ -5,8 +5,10 @@
   "main": "myscript.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint *"
+    "lint": "eslint . --ext .js",
+    "precommit-msg": "echo 'Проверка code-style...  Подожди' && exit 0"
   },
+  "pre-commit": ["precommit-msg", "lint" ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nazurdinov95/converter.git"
@@ -23,9 +25,7 @@
   "dependencies": {},
   "devDependencies": {
     "eslint": "^6.6.0",
-    "eslint-config-google": "^0.14.0"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+    "eslint-config-google": "^0.14.0",
+    "pre-commit": "^1.2.2"
   }
 }
