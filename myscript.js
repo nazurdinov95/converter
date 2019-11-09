@@ -5,17 +5,17 @@ let leng;
 
 function add_option_to_selects() {
 
-    const countryObj = document.getElementById("SelectMyLove");
+    const countryObj = document.getElementById("selectMyLove");
     const resortObj = document.getElementById("resort");
     const resortObj2 = document.getElementById("resort2");
     const selInd = countryObj.options.selectedIndex;
 
     switch (selInd) {
         case 0:
-            ResortObj.options.length = 0;
+            resortObj.options.length = 0;
             break;
         case 1:
-            ResortObj.options.length = 0;
+            resortObj.options.length = 0;
 
             leng = massa.length;
             // alert(len);

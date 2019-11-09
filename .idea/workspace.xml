@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="18b20cb1-2783-449b-8ae1-c3d8a9a20fdc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change beforePath="$PROJECT_DIR$/myscript.js" afterPath="$PROJECT_DIR$/myscript.js" />
-      <change beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +27,8 @@
       <file leaf-file-name="myscript.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myscript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="1" lean-forward="true" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+            <state relative-caret-position="204">
+              <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -69,9 +67,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="D:/Lesson/MyBase/mybase.loc/show.php" />
-        <option value="$PROJECT_DIR$/myscript.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/myscript.js" />
       </list>
     </option>
   </component>
@@ -169,7 +167,7 @@
       <workItem from="1572691971450" duration="110000" />
       <workItem from="1572852577566" duration="56410000" />
       <workItem from="1573143648081" duration="650000" />
-      <workItem from="1573146109854" duration="17271000" />
+      <workItem from="1573146109854" duration="17519000" />
     </task>
     <task id="LOCAL-00001" summary="project">
       <created>1572861598118</created>
@@ -290,11 +288,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573293219674</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="chang">
+      <created>1573294584303</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1573294584303</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74441000" />
+    <option name="totallyTimeSpent" value="74689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -338,7 +343,8 @@
     <MESSAGE value="add something" />
     <MESSAGE value="add second condition" />
     <MESSAGE value="finished mission" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished mission" />
+    <MESSAGE value="chang" />
+    <option name="LAST_COMMIT_MESSAGE" value="chang" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -419,8 +425,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myscript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="1" lean-forward="true" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
+        <state relative-caret-position="204">
+          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding />
         </state>
       </provider>
