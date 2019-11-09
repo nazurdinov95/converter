@@ -3,7 +3,7 @@ const massaValues = ["tn", "kg", "gr", "ml"];
 
 let leng;
 
-function Add_option_to_select() {
+function add_option_to_selects() {
 
     const CountryObj = document.getElementById("SelectMyLove");
     const ResortObj = document.getElementById("resort");
