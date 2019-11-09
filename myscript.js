@@ -1,54 +1,28 @@
-/*
-const button = document.getElementById('addButton');
-
-button.addEventListener('click', () => {
-    addButton();
-})
-
-const input = document.getElementById('input');
-
-input.addEventListener('keydown', (e) => {
-    if(e.keyCode === 13
-)
-{
-    addButton();
-}
-})
-*/
 const massa = new Array("Тонна", "Килограмм", "Грамм", "Милиграм");
-const Info = new Array("Киллобайт", "Мегабайт", "Гегабайт", "Терабайт");
-const dlina = new Array("Тонна", "Килограмм", "Грамм", "Милиграм");
+const massaValues = ["tn", "kg", "gr", "ml"];
 
-var leng;
+let leng;
 
 function Add_option_to_select() {
-    var CountryObj = document.getElementById("SelectMyLove");
-    var ResortObj = document.getElementById("resort");
-    var ResortObj2 = document.getElementById("resort2");
-    var selind = CountryObj.options.selectedIndex;
+
+    const CountryObj = document.getElementById("SelectMyLove");
+    const ResortObj = document.getElementById("resort");
+    const ResortObj2 = document.getElementById("resort2");
+    const selind = CountryObj.options.selectedIndex;
 
     switch (selind) {
-        case "0":
+        case 0:
             ResortObj.options.length = 0;
             break;
-        case "1":
+        case 1:
             ResortObj.options.length = 0;
 
             leng = massa.length;
             // alert(len);
-            for (var n = 0; n < leng; n++) {
-                ResortObj[n] = new Option(massa[n], n);
+            for (let n = 0; n < leng; n++) {
+                ResortObj[n] = new Option(massa[n], massaValues [n]);
             }
-        case "2":
-            ResortObj.options.length = 0;
-
-            leng = Info.length;
-
-            for (var n = 0; n < leng; n++) {
-                ResortObj[n] = new Option(Info[n], n);
-            }
-
-
+            break;
     }
     switch (selind) {
         case 0:
@@ -60,31 +34,34 @@ function Add_option_to_select() {
             leng = massa.length;
             // alert(len);
             for (var n = 0; n < leng; n++) {
-                ResortObj2[n] = new Option(massa[n], n);
+                ResortObj2[n] = new Option(massa[n], massaValues [n]);
             }
             break;
-        case 2:
-            ResortObj2.options.length = 0;
-
-            leng = Info.length;
-
-            for (var n = 0; n < leng; n++) {
-                ResortObj2[n] = new Option(Info[n], n);
-            }
-
-
     }
 }
 
+const button = document.getElementById('addButton');
 
-/*
-const select = document.getElementById('select1');
-const select2 = document.getElementById('select2');
+button.addEventListener('click', () = > {
+    addButton();
+})
 
-const KYLO_BYTE = 1024;
-const MEGA_BYTE = KYLO_BYTE * 1024;
-const GEGA_BYTE = MEGA_BYTE * 1024;
-const TERA_BYTE = GEGA_BYTE * 1024;
+const input = document.getElementById('input');
+
+input.addEventListener('keydown', (e) = > {
+    if(e.keyCode === 13
+)
+{
+    addButton();
+}
+})
+
+const select = document.getElementById('resort');
+const select2 = document.getElementById('resort2');
+
+const Tona = 1000 * 1000 * 1000;
+const Killo = 1000 * 1000;
+const Gram = 1000;
 
 function addButton() {
     const inputValue = document.getElementById('input').value;
@@ -94,35 +71,35 @@ function addButton() {
     let result;
 
     switch (from) {
-        case "kb":
-            result = inputValue * KYLO_BYTE;
+        case "ml":
+            result = inputValue * 1;
             break;
-        case "mb":
-            result = inputValue * MEGA_BYTE;
+        case "gr":
+            result = inputValue * Gram;
             break;
-        case "gb":
-            result = inputValue * GEGA_BYTE;
+        case "kg":
+            result = inputValue * Killo;
             break;
-        case "tb":
-            result = inputValue * TERA_BYTE;
+        case "tn":
+            result = inputValue * Tona;
             break;
     }
 
     let result2;
 
     switch (fromTo) {
-        case "kb":
-           result2 = result / KYLO_BYTE;
+        case "ml":
+            result2 = result;
             break;
-        case "mb":
-            result2 = result / MEGA_BYTE;
+        case "gr":
+            result2 = result / Gram;
             break;
-        case "gb":
-            result2 = result / GEGA_BYTE;
+        case "kg":
+            result2 = result / Killo;
             break;
-        case "tb":
-            result2 = result / TERA_BYTE;
+        case "tn":
+            result2 = result / Tona;
             break;
     }
     document.getElementById('message').value = result2;
-}*/
+}
