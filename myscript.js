@@ -1,16 +1,16 @@
-const massa = new Array("Тонна", "Килограмм", "Грамм", "Милиграм");
+const massa = ["Тонна", "Килограмм", "Грамм", "Милиграм"];
 const massaValues = ["tn", "kg", "gr", "ml"];
 
 let leng;
 
 function add_option_to_selects() {
 
-    const CountryObj = document.getElementById("SelectMyLove");
-    const ResortObj = document.getElementById("resort");
-    const ResortObj2 = document.getElementById("resort2");
-    const selind = CountryObj.options.selectedIndex;
+    const countryObj = document.getElementById("SelectMyLove");
+    const resortObj = document.getElementById("resort");
+    const resortObj2 = document.getElementById("resort2");
+    const selInd = countryObj.options.selectedIndex;
 
-    switch (selind) {
+    switch (selInd) {
         case 0:
             ResortObj.options.length = 0;
             break;
@@ -20,21 +20,21 @@ function add_option_to_selects() {
             leng = massa.length;
             // alert(len);
             for (let n = 0; n < leng; n++) {
-                ResortObj[n] = new Option(massa[n], massaValues [n]);
+                resortObj[n] = new Option(massa[n], massaValues [n]);
             }
             break;
     }
-    switch (selind) {
+    switch (selInd) {
         case 0:
-            ResortObj2.options.length = 0;
+            resortObj2.options.length = 0;
             break;
         case 1:
-            ResortObj2.options.length = 0;
+            resortObj2.options.length = 0;
 
             leng = massa.length;
             // alert(len);
             for (var n = 0; n < leng; n++) {
-                ResortObj2[n] = new Option(massa[n], massaValues [n]);
+                resortObj2[n] = new Option(massa[n], massaValues [n]);
             }
             break;
     }

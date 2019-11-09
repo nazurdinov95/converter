@@ -19,23 +19,7 @@
     margin: 2px 2px 0 77px;
 }
 
-#select1 {
-    width: 17%;
-    font-size:25px;
-    background-color: antiquewhite;
-    border-radius: 5px;
-    margin: 2px 2px 75px 0;
-}
-
-#select2 {
-    margin-left: 75px;
-    width: 17%;
-    font-size: 25px;
-    background-color: antiquewhite;
-    border-radius: 5px;
-}
-
-#SelectMyLove {
+#selectMyLove {
     height: 30px;
     width: 40.5%;
     border-radius: 5px;
