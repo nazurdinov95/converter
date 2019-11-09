@@ -42,13 +42,13 @@ function add_option_to_selects() {
 
 const button = document.getElementById('addButton');
 
-button.addEventListener('click', () = > {
+button.addEventListener('click', () => {
     addButton();
 })
 
 const input = document.getElementById('input');
 
-input.addEventListener('keydown', (e) = > {
+input.addEventListener('keydown', (e) => {
     if(e.keyCode === 13
 )
 {
