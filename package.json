@@ -8,7 +8,10 @@
     "lint": "eslint . --ext .js",
     "precommit-msg": "echo 'Проверка code-style...  Подожди' && exit 0"
   },
-  "pre-commit": ["precommit-msg", "lint" ],
+  "pre-commit": [
+    "precommit-msg",
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nazurdinov95/converter.git"
