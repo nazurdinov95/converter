@@ -1,5 +1,9 @@
 const massa = ['Тонна', 'Килограмм', 'Грамм', 'Милиграм'];
 const massaValues = ['tn', 'kg', 'gr', 'ml'];
+const info = ['Килобайт', 'Мегабайт', 'Гигабайт', 'Терабайт'];
+const infoValues = ['kb', 'mb', 'gb', 'tb'];
+const dlina = ['Миллиметр', 'Сантиметр', 'Метр', 'Километр'];
+const dlinaValues = ['mlt', 'st', 'mt', 'km'];
 const addSelect = document.getElementById('selectMyLove');
 let lengthInd;
 
@@ -26,6 +30,24 @@ function selectMyLove() {
         resortObj[n] = new Option(massa[n], massaValues [n]);
       }
       break;
+    case 2:
+      resortObj.options.length = 0;
+
+      lengthInd = info.length;
+
+      for (let n = 0; n < lengthInd; n++) {
+        resortObj[n] = new Option(info[n], infoValues [n]);
+      }
+      break;
+    case 3:
+      resortObj.options.length = 0;
+
+      lengthInd = dlina.length;
+
+      for (let n = 0; n < lengthInd; n++) {
+        resortObj[n] = new Option(dlina[n], dlinaValues [n]);
+      }
+      break;
   }
   switch (selInd) {
     case 0:
@@ -38,6 +60,24 @@ function selectMyLove() {
 
       for (let n = 0; n < lengthInd; n++) {
         resortObj2[n] = new Option(massa[n], massaValues [n]);
+      }
+      break;
+    case 2:
+      resortObj2.options.length = 0;
+
+      lengthInd = info.length;
+
+      for (let n = 0; n < lengthInd; n++) {
+        resortObj2[n] = new Option(info[n], infoValues [n]);
+      }
+      break;
+    case 3:
+      resortObj2.options.length = 0;
+
+      lengthInd = dlina.length;
+
+      for (let n = 0; n < lengthInd; n++) {
+        resortObj2[n] = new Option(dlina[n], dlinaValues [n]);
       }
       break;
   }
@@ -99,6 +139,73 @@ function addButton() {
       break;
     case 'tn':
       result2 = result / Tona;
+      break;
+  }
+
+  document.getElementById('message').value = result2;
+
+  const megaBayt = 1024 * 1024;
+  const gegaBayt = 1024 * 1024 * 1024;
+  const teraBayt = 1024 * 1024 * 1024 * 1024;
+
+  switch (from) {
+    case 'kb':
+      result = inputValue * 1024;
+      break;
+    case 'mb':
+      result = inputValue * megaBayt;
+      break;
+    case 'gb':
+      result = inputValue * gegaBayt;
+      break;
+    case 'tb':
+      result = inputValue * teraBayt;
+      break;
+  }
+
+  switch (fromTo) {
+    case 'kb':
+      result2 = result / 1024;
+      break;
+    case 'mb':
+      result2 = result / megaBayt;
+      break;
+    case 'gb':
+      result2 = result / gegaBayt;
+      break;
+    case 'tb':
+      result2 = result / teraBayt;
+      break;
+  }
+  document.getElementById('message').value = result2;
+
+  switch (from) {
+    case 'mlt':
+      result = inputValue * 1;
+      break;
+    case 'st':
+      result = inputValue * 10;
+      break;
+    case 'mt':
+      result = inputValue * 1000;
+      break;
+    case 'km':
+      result = inputValue * 1000000;
+      break;
+  }
+
+  switch (fromTo) {
+    case 'mlt':
+      result2 = result;
+      break;
+    case 'st':
+      result2 = result / 10;
+      break;
+    case 'mt':
+      result2 = result / 1000;
+      break;
+    case 'km':
+      result2 = result / 1000000;
       break;
   }
   document.getElementById('message').value = result2;
