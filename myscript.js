@@ -51,6 +51,11 @@ function addMassivsToOption() {
       fillOptions(resortObj2, info, infoValues);
       break;
     }
+
+    case 3: {
+      fillOptions(resortObj2, dlina, dlinaValues);
+      break;
+    }
   }
 
   const button = document.getElementById('addButton');
