@@ -38,16 +38,20 @@ function onChangeUnitsSelect(e) {
     }
 
     case 2: {
-      convertButton.onclick = convertInfo;
       fillOptions(unitFrom, infoTexts, infoValues);
       fillOptions(unitTo, infoTexts, infoValues);
+
+      convertButton.onclick = convertInfo;
+
       break;
     }
 
     case 3: {
-      convertButton.onclick = convertLength;
       fillOptions(unitFrom, lengthText, lengthValues);
       fillOptions(unitTo, lengthText, lengthValues);
+
+      convertButton.onclick = convertLength;
+
       break;
     }
   }
@@ -117,10 +121,10 @@ function convertWeight() {
 
 // // Converting information units
 
-const KILOBAYTE = 1024;
-const MEGABAYTE = KILOBAYTE * 1024;
-const GIGABAYTE = MEGABAYTE * 1024;
-const TERABAYTE = GIGABAYTE * 1024;
+const KILOBYTE = 1024;
+const MEGABYTE = KILOBYTE * 1024;
+const GIGABYTE = MEGABYTE * 1024;
+const TERABYTE = GIGABYTE * 1024;
 
 function convertInfo() {
   const inputValue = input.value;
@@ -131,22 +135,22 @@ function convertInfo() {
 
   switch (from) {
     case 'kb': {
-      result = inputValue * KILOBAYTE;
+      result = inputValue * KILOBYTE;
       break;
     }
 
     case 'mb': {
-      result = inputValue * MEGABAYTE;
+      result = inputValue * MEGABYTE;
       break;
     }
 
     case 'gb': {
-      result = inputValue * GIGABAYTE;
+      result = inputValue * GIGABYTE;
       break;
     }
 
     case 'tb': {
-      result = inputValue * TERABAYTE;
+      result = inputValue * TERABYTE;
       break;
     }
   }
@@ -154,22 +158,22 @@ function convertInfo() {
 
   switch (to) {
     case 'kb': {
-      result /= KILOBAYTE;
+      result /= KILOBYTE;
       break;
     }
 
     case 'mb': {
-      result /= MEGABAYTE;
+      result /= MEGABYTE;
       break;
     }
 
     case 'gb': {
-      result /= GIGABAYTE;
+      result /= GIGABYTE;
       break;
     }
 
     case 'tb': {
-      result /= TERABAYTE;
+      result /= TERABYTE;
       break;
     }
   }
@@ -177,7 +181,7 @@ function convertInfo() {
   output.value = result;
 }
 
-// // Converting Length
+// // Converting Length units
 
 const MILLIMETER = 1;
 const SANTIMETER = MILLIMETER * 10;
