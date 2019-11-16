@@ -1,191 +1,240 @@
-const massa = ['Тонна', 'Килограмм', 'Грамм', 'Милиграм'];
-const massaValues = ['tn', 'kg', 'gr', 'ml'];
-const info = ['Килобайт', 'Мегабайт', 'Гигабайт', 'Терабайт'];
+const weightTexts = ['Тонна', 'Килограмм', 'Грамм', 'Милиграм'];
+const weightValues = ['tn', 'kg', 'gr', 'ml'];
+const infoTexts = ['Килобайт', 'Мегабайт', 'Гегабайт', 'Терабайт'];
 const infoValues = ['kb', 'mb', 'gb', 'tb'];
-const dlina = ['Миллиметр', 'Сантиметр', 'Метр', 'Километр'];
-const dlinaValues = ['mlt', 'st', 'mt', 'km'];
-const addSelect = document.getElementById('addMassivsToOption');
+const lengthText = ['Миллиметр', 'Сантиметр', 'Метр', 'Километр'];
+const lengthValues = ['mlt', 'st', 'mt', 'kt'];
 
-addSelect.addEventListener('change', () => {
-  addMassivsToOption();
-});
+const unitFrom = document.getElementById('unitFrom');
+const unitTo = document.getElementById('unitTo');
+const convertButton = document.getElementById('convert');
 
-function addMassivsToOption() {
-  const countryObj = document.getElementById('addMassivsToOption');
-  const resortObj = document.getElementById('resort');
-  const resortObj2 = document.getElementById('resort2');
-  const selInd = countryObj.options.selectedIndex;
+const input = document.getElementById('input');
+const output = document.getElementById('output');
 
-  function fillOptions(select, options, optionsValues) {
-    select.options.length = 0;
+const unitsSelect = document.getElementById('unitsSelect');
+unitsSelect.addEventListener('change', onChangeUnitsSelect);
 
-    for (let n = 0; n < options.length; n++) {
-      select[n] = new Option(options[n], optionsValues[n]);
-    }
+function fillOptions(select, optionTexts, optionValues) {
+  select.options.length = 0;
+
+  for (let n = 0; n < optionTexts.length; n++) {
+    select[n] = new Option(optionTexts[n], optionValues[n]);
   }
+}
 
-  switch (selInd) {
+function onChangeUnitsSelect(e) {
+  const select = e.target;
+  const selectedIndex = select.selectedIndex;
+
+  switch (selectedIndex) {
     case 1: {
-      fillOptions(resortObj, massa, massaValues);
+      fillOptions(unitFrom, weightTexts, weightValues);
+      fillOptions(unitTo, weightTexts, weightValues);
+
+      convertButton.onclick = convertWeight;
+
       break;
     }
 
     case 2: {
-      fillOptions(resortObj, info, infoValues);
+      convertButton.onclick = convertInfo;
+      fillOptions(unitFrom, infoTexts, infoValues);
+      fillOptions(unitTo, infoTexts, infoValues);
       break;
     }
 
     case 3: {
-      fillOptions(resortObj, dlina, dlinaValues);
+      convertButton.onclick = convertLength;
+      fillOptions(unitFrom, lengthText, lengthValues);
+      fillOptions(unitTo, lengthText, lengthValues);
+      break;
+    }
+  }
+}
+
+// // Converting weight
+
+const MILLIGRAM = 1;
+const GRAM = MILLIGRAM * 1000;
+const KILO = GRAM * 1000;
+const TON = KILO * 1000;
+
+function convertWeight() {
+  const inputValue = input.value;
+  const from = unitFrom.value;
+  const to = unitTo.value;
+
+  let result;
+
+  switch (from) {
+    case 'ml': {
+      result = inputValue * MILLIGRAM;
+      break;
+    }
+
+    case 'gr': {
+      result = inputValue * GRAM;
+      break;
+    }
+
+    case 'kg': {
+      result = inputValue * KILO;
+      break;
+    }
+
+    case 'tn': {
+      result = inputValue * TON;
       break;
     }
   }
 
-  switch (selInd) {
-    case 1: {
-      fillOptions(resortObj2, massa, massaValues);
+
+  switch (to) {
+    case 'ml': {
+      result /= MILLIGRAM;
       break;
     }
 
-    case 2: {
-      fillOptions(resortObj2, info, infoValues);
+    case 'gr': {
+      result /= GRAM;
       break;
     }
 
-    case 3: {
-      fillOptions(resortObj2, dlina, dlinaValues);
+    case 'kg': {
+      result /= KILO;
+      break;
+    }
+
+    case 'tn': {
+      result /= TON;
       break;
     }
   }
 
-  const button = document.getElementById('addButton');
+  output.value = result;
+}
 
-  button.addEventListener('click', () => {
-    addButton();
-  });
+// // Converting information units
 
-  const input = document.getElementById('input');
+const KILOBAYTE = 1024;
+const MEGABAYTE = KILOBAYTE * 1024;
+const GIGABAYTE = MEGABAYTE * 1024;
+const TERABAYTE = GIGABAYTE * 1024;
 
-  input.addEventListener('keydown', (e) => {
-    if (e.keyCode === 13) {
-      addButton();
-    }
-  });
+function convertInfo() {
+  const inputValue = input.value;
+  const from = unitFrom.value;
+  const to = unitTo.value;
 
-  const select = document.getElementById('resort');
-  const select2 = document.getElementById('resort2');
+  let result;
 
-  const TONA = 1000 * 1000 * 1000;
-  const KILO = 1000 * 1000;
-  const GRAM = 1000;
-
-  function addButton() {
-    const inputValue = document.getElementById('input').value;
-    const from = select.value;
-    const fromTo = select2.value;
-    let result;
-
-    switch (from) {
-      case 'ml':
-        result = inputValue * 1;
-        break;
-      case 'gr':
-        result = inputValue * GRAM;
-        break;
-      case 'kg':
-        result = inputValue * KILO;
-        break;
-      case 'tn':
-        result = inputValue * TONA;
-        break;
+  switch (from) {
+    case 'kb': {
+      result = inputValue * KILOBAYTE;
+      break;
     }
 
-    let result2;
-
-    switch (fromTo) {
-      case 'ml':
-        result2 = result;
-        break;
-      case 'gr':
-        result2 = result / GRAM;
-        break;
-      case 'kg':
-        result2 = result / KILO;
-        break;
-      case 'tn':
-        result2 = result / TONA;
-        break;
+    case 'mb': {
+      result = inputValue * MEGABAYTE;
+      break;
     }
 
-    document.getElementById('message').value = result2;
-
-    const MEGA_BAYT = 1024 * 1024;
-    const GIGA_BAYT = 1024 * 1024 * 1024;
-    const TERA_BAYT = 1024 * 1024 * 1024 * 1024;
-
-    switch (from) {
-      case 'kb':
-        result = inputValue * 1024;
-        break;
-      case 'mb':
-        result = inputValue * MEGA_BAYT;
-        break;
-      case 'gb':
-        result = inputValue * GIGA_BAYT;
-        break;
-      case 'tb':
-        result = inputValue * TERA_BAYT;
-        break;
+    case 'gb': {
+      result = inputValue * GIGABAYTE;
+      break;
     }
 
-    switch (fromTo) {
-      case 'kb':
-        result2 = result / 1024;
-        break;
-      case 'mb':
-        result2 = result / MEGA_BAYT;
-        break;
-      case 'gb':
-        result2 = result / GIGA_BAYT;
-        break;
-      case 'tb':
-        result2 = result / TERA_BAYT;
-        break;
+    case 'tb': {
+      result = inputValue * TERABAYTE;
+      break;
     }
-    document.getElementById('message').value = result2;
-
-    const METR = 1000;
-    const KILOMETR = 1000000;
-
-    switch (from) {
-      case 'mlt':
-        result = inputValue * 1;
-        break;
-      case 'st':
-        result = inputValue * 10;
-        break;
-      case 'mt':
-        result = inputValue * METR;
-        break;
-      case 'km':
-        result = inputValue * KILOMETR;
-        break;
-    }
-
-    switch (fromTo) {
-      case 'mlt':
-        result2 = result;
-        break;
-      case 'st':
-        result2 = result / 10;
-        break;
-      case 'mt':
-        result2 = result / METR;
-        break;
-      case 'km':
-        result2 = result / KILOMETR;
-        break;
-    }
-    document.getElementById('message').value = result2;
   }
+
+
+  switch (to) {
+    case 'kb': {
+      result /= KILOBAYTE;
+      break;
+    }
+
+    case 'mb': {
+      result /= MEGABAYTE;
+      break;
+    }
+
+    case 'gb': {
+      result /= GIGABAYTE;
+      break;
+    }
+
+    case 'tb': {
+      result /= TERABAYTE;
+      break;
+    }
+  }
+
+  output.value = result;
+}
+
+// // Converting Length
+
+const MILLIMETER = 1;
+const SANTIMETER = MILLIMETER * 10;
+const METER = SANTIMETER * 100;
+const KILOMETER = METER * 1000;
+
+function convertLength() {
+  const inputValue = input.value;
+  const from = unitFrom.value;
+  const to = unitTo.value;
+
+  let result;
+
+  switch (from) {
+    case 'mlt': {
+      result = inputValue * MILLIMETER;
+      break;
+    }
+
+    case 'st': {
+      result = inputValue * SANTIMETER;
+      break;
+    }
+
+    case 'mt': {
+      result = inputValue * METER;
+      break;
+    }
+
+    case 'kt': {
+      result = inputValue * KILOMETER;
+      break;
+    }
+  }
+
+
+  switch (to) {
+    case 'mlt': {
+      result /= MILLIMETER;
+      break;
+    }
+
+    case 'st': {
+      result /= SANTIMETER;
+      break;
+    }
+
+    case 'mt': {
+      result /= METER;
+      break;
+    }
+
+    case 'kt': {
+      result /= KILOMETER;
+      break;
+    }
+  }
+
+  output.value = result;
 }

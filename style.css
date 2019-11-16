@@ -3,7 +3,7 @@
     padding: 10px;
 }
 
-#resort {
+#unitFrom {
     width: 17%;
     font-size: 25px;
     background-color: antiquewhite;
@@ -11,7 +11,7 @@
     margin: 2px 0;
 }
 
-#resort2 {
+#unitTo {
     width: 17%;
     font-size: 25px;
     background-color: antiquewhite;
@@ -19,7 +19,7 @@
     margin: 2px 2px 0 77px;
 }
 
-#addMassivsToOption {
+#unitsSelect {
     height: 30px;
     width: 40.5%;
     border-radius: 5px;
@@ -27,7 +27,7 @@
     font-size: 25px;
 }
 
-#message{
+#output {
     text-align: center;
 }
 
@@ -36,7 +36,8 @@ input{
     height: 30px;
     font-size: 18px;
 }
-#addButton{
+
+#convert {
     height: 35px;
     background-color: aliceblue;
     font-size: 15px;
