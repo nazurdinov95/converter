@@ -1,0 +1,34 @@
+{
+  "name": "converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "myscript.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .js",
+    "precommit-msg": "echo 'Проверка code-style...  Подожди' && exit 0"
+  },
+  "pre-commit": [
+    "precommit-msg",
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazurdinov95/converter.git"
+  },
+  "keywords": [
+    "converter"
+  ],
+  "author": "Amriddin Nazurdinov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nazurdinov95/converter/issues"
+  },
+  "homepage": "https://github.com/nazurdinov95/converter#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-google": "^0.14.0",
+    "pre-commit": "^1.2.2"
+  }
+}

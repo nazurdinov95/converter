@@ -16,45 +16,45 @@ const unitsSelect = document.getElementById('unitsSelect');
 unitsSelect.addEventListener('change', onChangeUnitsSelect);
 
 function fillOptions(select, optionTexts, optionValues) {
-    select.options.length = 0;
+  select.options.length = 0;
 
-    for (let n = 0; n < optionTexts.length; n++) {
-        select[n] = new Option(optionTexts[n], optionValues[n]);
-    }
+  for (let n = 0; n < optionTexts.length; n++) {
+    select[n] = new Option(optionTexts[n], optionValues[n]);
+  }
 }
 
 function onChangeUnitsSelect(e) {
-    const select = e.target;
-    const selectedIndex = select.selectedIndex;
+  const select = e.target;
+  const selectedIndex = select.selectedIndex;
 
-    switch (selectedIndex) {
-        case 1: {
-            fillOptions(unitFrom, weightTexts, weightValues);
-            fillOptions(unitTo, weightTexts, weightValues);
+  switch (selectedIndex) {
+    case 1: {
+      fillOptions(unitFrom, weightTexts, weightValues);
+      fillOptions(unitTo, weightTexts, weightValues);
 
-            convertButton.onclick = convertWeight;
+      convertButton.onclick = convertWeight;
 
-            break;
-        }
-
-        case 2: {
-            fillOptions(unitFrom, infoTexts, infoValues);
-            fillOptions(unitTo, infoTexts, infoValues);
-
-            convertButton.onclick = convertInfo;
-
-            break;
-        }
-
-        case 3: {
-            fillOptions(unitFrom, lengthText, lengthValues);
-            fillOptions(unitTo, lengthText, lengthValues);
-
-            convertButton.onclick = convertLength;
-
-            break;
-        }
+      break;
     }
+
+    case 2: {
+      fillOptions(unitFrom, infoTexts, infoValues);
+      fillOptions(unitTo, infoTexts, infoValues);
+
+      convertButton.onclick = convertInfo;
+
+      break;
+    }
+
+    case 3: {
+      fillOptions(unitFrom, lengthText, lengthValues);
+      fillOptions(unitTo, lengthText, lengthValues);
+
+      convertButton.onclick = convertLength;
+
+      break;
+    }
+  }
 }
 
 // // Converting weight
@@ -65,6 +65,130 @@ const KILO = GRAM * 1000;
 const TON = KILO * 1000;
 
 function convertWeight() {
+  const inputValue = input.value;
+  const from = unitFrom.value;
+  const to = unitTo.value;
+
+  let result;
+
+  switch (from) {
+    case 'ml': {
+      result = inputValue * MILLIGRAM;
+      break;
+    }
+
+    case 'gr': {
+      result = inputValue * GRAM;
+      break;
+    }
+
+    case 'kg': {
+      result = inputValue * KILO;
+      break;
+    }
+
+    case 'tn': {
+      result = inputValue * TON;
+      break;
+    }
+  }
+
+
+  switch (to) {
+    case 'ml': {
+      result /= MILLIGRAM;
+      break;
+    }
+
+    case 'gr': {
+      result /= GRAM;
+      break;
+    }
+
+    case 'kg': {
+      result /= KILO;
+      break;
+    }
+
+    case 'tn': {
+      result /= TON;
+      break;
+    }
+  }
+
+  output.value = result;
+}
+
+// // Converting information units
+
+const KILOBYTE = 1024;
+const MEGABYTE = KILOBYTE * 1024;
+const GIGABYTE = MEGABYTE * 1024;
+const TERABYTE = GIGABYTE * 1024;
+
+function convertInfo() {
+  const inputValue = input.value;
+  const from = unitFrom.value;
+  const to = unitTo.value;
+
+  let result;
+
+  switch (from) {
+    case 'kb': {
+      result = inputValue * KILOBYTE;
+      break;
+    }
+
+    case 'mb': {
+      result = inputValue * MEGABYTE;
+      break;
+    }
+
+    case 'gb': {
+      result = inputValue * GIGABYTE;
+      break;
+    }
+
+    case 'tb': {
+      result = inputValue * TERABYTE;
+      break;
+    }
+  }
+
+
+  switch (to) {
+    case 'kb': {
+      result /= KILOBYTE;
+      break;
+    }
+
+    case 'mb': {
+      result /= MEGABYTE;
+      break;
+    }
+
+    case 'gb': {
+      result /= GIGABYTE;
+      break;
+    }
+
+    case 'tb': {
+      result /= TERABYTE;
+      break;
+    }
+  }
+
+  output.value = result;
+}
+
+// // Converting Length units
+
+const MILLIMETER = 1;
+const SANTIMETER = MILLIMETER * 10;
+const METER = SANTIMETER * 100;
+const KILOMETER = METER * 1000;
+
+function convertLength() {
     const inputValue = input.value;
     const from = unitFrom.value;
     const to = unitTo.value;
