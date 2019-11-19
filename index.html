@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet" type="text/css">
     <title>Converter</title>
+
 </head>
 <body>
 
 <div id="container">
-    <input id="input">
-    <button id="addButton">Convert</button>
-    <p id="message"></p>
+    <select id="unitsSelect">
+        <option>Выберите единицу</option>
+        <option value="1">Масса</option>
+        <option value="2">Объем информации</option>
+        <option value="3">Длина</option>
+    </select>
     <br>
-    <input type="radio" id="kb">KB<br>
-    <input type="radio" id="mb">MB<br>
-    to
+    <input id="input" type="number" placeholder="напишите число">
+    <button id="convert">Convert</button>
+    <input type="text" id="output">
     <br>
-    <input type="radio" id="kb1">KB<br>
-    <input type="radio" id="mb1">MB<br>
-</div>
 
+    <select id="unitFrom"></select>
+    <select id="unitTo"></select>
+
+</div>
 <script src="myscript.js" type="text/javascript"></script>
 </body>
 </html>

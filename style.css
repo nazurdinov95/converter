@@ -2,6 +2,43 @@
     margin: 10px;
     padding: 10px;
 }
-select {
+
+#unitFrom {
+    width: 17%;
+    font-size: 25px;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    margin: 2px 0;
+}
+
+#unitTo {
+    width: 17%;
+    font-size: 25px;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    margin: 2px 2px 0 77px;
+}
+
+#unitsSelect {
+    height: 30px;
+    width: 40.5%;
+    border-radius: 5px;
     margin: 10px 0;
+    font-size: 25px;
+}
+
+#output {
+    text-align: center;
+}
+
+input{
+    width: 17%;
+    height: 30px;
+    font-size: 18px;
+}
+
+#convert {
+    height: 35px;
+    background-color: aliceblue;
+    font-size: 15px;
 }
