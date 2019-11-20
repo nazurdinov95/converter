@@ -189,180 +189,57 @@ const METER = SANTIMETER * 100;
 const KILOMETER = METER * 1000;
 
 function convertLength() {
-    const inputValue = input.value;
-    const from = unitFrom.value;
-    const to = unitTo.value;
+  const inputValue = input.value;
+  const from = unitFrom.value;
+  const to = unitTo.value;
 
-    let result;
+  let result;
 
-    switch (from) {
-        case 'ml': {
-            result = inputValue * MILLIGRAM;
-            break;
-        }
-
-        case 'gr': {
-            result = inputValue * GRAM;
-            break;
-        }
-
-        case 'kg': {
-            result = inputValue * KILO;
-            break;
-        }
-
-        case 'tn': {
-            result = inputValue * TON;
-            break;
-        }
+  switch (from) {
+    case 'mlt': {
+      result = inputValue * MILLIMETER;
+      break;
     }
 
-
-    switch (to) {
-        case 'ml': {
-            result /= MILLIGRAM;
-            break;
-        }
-
-        case 'gr': {
-            result /= GRAM;
-            break;
-        }
-
-        case 'kg': {
-            result /= KILO;
-            break;
-        }
-
-        case 'tn': {
-            result /= TON;
-            break;
-        }
+    case 'st': {
+      result = inputValue * SANTIMETER;
+      break;
     }
 
-    output.value = result;
+    case 'mt': {
+      result = inputValue * METER;
+      break;
+    }
+
+    case 'kt': {
+      result = inputValue * KILOMETER;
+      break;
+    }
+  }
+
+
+  switch (to) {
+    case 'mlt': {
+      result /= MILLIGRAM;
+      break;
+    }
+
+    case 'st': {
+      result /= SANTIMETER;
+      break;
+    }
+
+    case 'mt': {
+      result /= METER;
+      break;
+    }
+
+    case 'kt': {
+      result /= KILOMETER;
+      break;
+    }
+  }
+
+  output.value = result;
 }
 
-// // Converting information units
-
-const KILOBYTE = 1024;
-const MEGABYTE = KILOBYTE * 1024;
-const GIGABYTE = MEGABYTE * 1024;
-const TERABYTE = GIGABYTE * 1024;
-
-function convertInfo() {
-    const inputValue = input.value;
-    const from = unitFrom.value;
-    const to = unitTo.value;
-
-    let result;
-
-    switch (from) {
-        case 'kb': {
-            result = inputValue * KILOBYTE;
-            break;
-        }
-
-        case 'mb': {
-            result = inputValue * MEGABYTE;
-            break;
-        }
-
-        case 'gb': {
-            result = inputValue * GIGABYTE;
-            break;
-        }
-
-        case 'tb': {
-            result = inputValue * TERABYTE;
-            break;
-        }
-    }
-
-
-    switch (to) {
-        case 'kb': {
-            result /= KILOBYTE;
-            break;
-        }
-
-        case 'mb': {
-            result /= MEGABYTE;
-            break;
-        }
-
-        case 'gb': {
-            result /= GIGABYTE;
-            break;
-        }
-
-        case 'tb': {
-            result /= TERABYTE;
-            break;
-        }
-    }
-
-    output.value = result;
-}
-
-// // Converting Length units
-
-const MILLIMETER = 1;
-const SANTIMETER = MILLIMETER * 10;
-const METER = SANTIMETER * 100;
-const KILOMETER = METER * 1000;
-
-function convertLength() {
-    const inputValue = input.value;
-    const from = unitFrom.value;
-    const to = unitTo.value;
-
-    let result;
-
-    switch (from) {
-        case 'mlt': {
-            result = inputValue * MILLIMETER;
-            break;
-        }
-
-        case 'st': {
-            result = inputValue * SANTIMETER;
-            break;
-        }
-
-        case 'mt': {
-            result = inputValue * METER;
-            break;
-        }
-
-        case 'kt': {
-            result = inputValue * KILOMETER;
-            break;
-        }
-    }
-
-
-    switch (to) {
-        case 'mlt': {
-            result /= MILLIMETER;
-            break;
-        }
-
-        case 'st': {
-            result /= SANTIMETER;
-            break;
-        }
-
-        case 'mt': {
-            result /= METER;
-            break;
-        }
-
-        case 'kt': {
-            result /= KILOMETER;
-            break;
-        }
-    }
-
-    output.value = result;
-}
